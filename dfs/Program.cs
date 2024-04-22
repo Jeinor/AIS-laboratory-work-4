@@ -43,18 +43,20 @@ namespace dfs
             }
         }
 
-        internal void DFSHelper(int src, bool[] visited)
+        internal void DFSHelper(int start, int finish, bool[] visited, ref int count)
         {
-            visited[src] = true;
-            Console.Write(src);
-            if (linkedListArray[src] != null)
+            visited[start] = true;
+            Console.Write(start);
+            if (linkedListArray[start] != null)
             {
-                foreach (var item in linkedListArray[src])
+                foreach (var item in linkedListArray[start])
                 {
-                    if (!visited[item] == true)
+                    if (!visited[item] == true || start != finish)
                     {
                         Console.Write("->");
-                        DFSHelper(item, visited);
+                        count++;
+                        DFSHelper(item, finish, visited, ref count);
+
                     }
                 }
             }
@@ -63,9 +65,17 @@ namespace dfs
         internal void DFS()
         {
             Console.WriteLine("DFS");
+            Console.WriteLine("Enter starting path a");
+            int a = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter finishing path b");
+            int b = int.Parse(Console.ReadLine());
+
+            int count = 0;
             Console.Write("Path: ");
             bool[] visited = new bool[linkedListArray.Length + 1];
-            DFSHelper(1, visited);
+            DFSHelper(a, b, visited, ref count);
+            Console.WriteLine("\nPath length: " + count);
         }
     }
 
