@@ -73,7 +73,7 @@ namespace dfs
             Console.Write("Enter starting path a: ");
             int a;
 
-            //Exception handling when the input parameters of vertices a and b take incorrect values.
+            //Обработка исключений, когда входные параметры вершин a и b принимают неправильные значения.
             bool check_a = int.TryParse(Console.ReadLine(), out a);
             while (!check_a)
             {
