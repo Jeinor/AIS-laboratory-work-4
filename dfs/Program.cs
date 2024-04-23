@@ -65,11 +65,27 @@ namespace dfs
         internal void DFS()
         {
             Console.WriteLine("DFS");
-            Console.WriteLine("Enter starting path a");
-            int a = int.Parse(Console.ReadLine());
+            Console.Write("Enter starting path a: ");
+            int a;
 
-            Console.WriteLine("Enter finishing path b");
-            int b = int.Parse(Console.ReadLine());
+            //Exception handling when the input parameters of vertices a and b take incorrect values.
+            bool check_a = int.TryParse(Console.ReadLine(), out a);
+            while (!check_a)
+            {
+                Console.WriteLine("You didn't enter a number");
+                Console.Write("Enter correct path a: ");
+                check_a = int.TryParse(Console.ReadLine(), out a);
+            }
+
+            Console.Write("Enter finishing path b: ");
+            int b;
+            bool check_b = int.TryParse(Console.ReadLine(), out b);
+            while (!check_b)
+            {
+                Console.WriteLine("You didn't enter a number");
+                Console.Write("Enter correct path b: ");
+                check_b = int.TryParse(Console.ReadLine(), out b);
+            }
 
             int count = 0;
             Console.Write("Path: ");
