@@ -8,7 +8,7 @@ namespace dfs
 {
     public class Graph
     {
-        //Создание графа
+
         LinkedList<int>[] linkedListArray;
 
         public Graph(int v)
