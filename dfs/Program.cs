@@ -8,7 +8,9 @@ namespace dfs
 {
     public class Graph
     {
+      
         //Создание графа
+
         LinkedList<int>[] linkedListArray;
 
         public Graph(int v)
@@ -16,6 +18,7 @@ namespace dfs
             linkedListArray = new LinkedList<int>[v];
         }
 
+        //Filling out the graph
         public void AddEdge(int u, int v, bool blnBiDir = true)
         {
             if (linkedListArray[u] == null)
@@ -44,6 +47,7 @@ namespace dfs
             }
         }
 
+        //Graph Traversal
         internal void DFSHelper(int start, int finish, bool[] visited, ref int count)
         {
             visited[start] = true;
@@ -63,6 +67,7 @@ namespace dfs
             }
         }
 
+        //Depth First Search
         internal void DFS()
         {
             Console.WriteLine("DFS");
