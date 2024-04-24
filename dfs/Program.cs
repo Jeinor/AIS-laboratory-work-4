@@ -11,6 +11,7 @@ namespace dfs
 
         LinkedList<int>[] linkedListArray;
 
+        //Создание графа
         public Graph(int v)
         {
             linkedListArray = new LinkedList<int>[v];
